@@ -1,0 +1,2 @@
+# touristzone
+allamvizsga
