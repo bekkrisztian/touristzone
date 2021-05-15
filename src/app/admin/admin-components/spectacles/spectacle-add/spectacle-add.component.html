@@ -1,0 +1,53 @@
+<form [formGroup]="spectacleForm" (ngSubmit)="onSubmit()" novalidate>
+  <mat-form-field>
+    <mat-label>Látványosság neve</mat-label>
+    <input matInput formControlName="name" placeholder="Látványosság neve">
+  </mat-form-field>
+  <div>
+    <h3>Ország</h3>
+    <select (change)="changeCountry($event.target.value)">
+      <option>-- Válasszon országot --</option>
+      <option *ngFor="let country of countryDto">{{ country?.name }}</option>
+    </select>
+  </div>
+  <div formGroupName="county">
+    <h3>Megye</h3>
+    <select formControlName="id">
+      <option>-- Válasszon megyét --</option>
+      <option  *ngFor ="let county of counties" value="{{ county?.id }}">{{ county?.name }}</option>
+    </select>
+  </div>
+  <mat-form-field>
+    <mat-label>Hosszúság (Longitude)</mat-label>
+    <input matInput formControlName="longitude" placeholder="Hosszúság">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Szélesség (Latitude)</mat-label>
+    <input matInput formControlName="latitude" placeholder="Szélesség">
+  </mat-form-field>
+  <div formGroupName="pin">
+    <h3>Típus</h3>
+    <select formControlName="id">
+      <option>-- Válasszon típust --</option>
+      <option  *ngFor ="let pin of pins" value="{{ pin?.id }}">{{ pin?.name }}</option>
+    </select>
+  </div>
+  <div class="description-editor">
+    <h3>Leírás</h3>
+    <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+    </ngx-editor-menu>
+    <ngx-editor [editor]="editor" formControlName="description">
+    </ngx-editor>
+  </div>
+  <div class="history-editor">
+    <h3>Történelmi háttér</h3>
+    <ngx-editor-menu [editor]="editor1" [toolbar]="toolbar">
+    </ngx-editor-menu>
+    <ngx-editor [editor]="editor1" formControlName="history">
+    </ngx-editor>
+  </div>
+  <button type="submit" class="mat-raised-button" [disabled]="spectacleForm.invalid">Mentés</button>
+</form>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="onCloseClick()">Bezárás</button>
+</mat-dialog-actions>

@@ -1,0 +1,23 @@
+<div class="cover">
+  <h2>Zászló</h2>
+  <div class="image-upload">
+    <input type="file" accept="image/*" (change)="onFlagSelected($event)">
+    <button type="button" (click)="onFlagUpload()">Feltöltés</button>
+  </div>
+  <table>
+    <tr>
+      <th>Kép</th>
+      <th>Név</th>
+      <th>Törlés</th>
+    </tr>
+    <tr>
+      <td>
+        <img [src]="'data:image/JPG;base64,'+ country?.flags?.data" alt="{{ country?.flags?.name }}" width="100">
+      </td>
+      <td>{{ country?.flags?.name }}</td>
+      <td>
+        <button mat-raised-button color="warn" (click)="deleteFlag(country?.flags?.id, country?.flags?.name)"><mat-icon>delete</mat-icon></button>
+      </td>
+    </tr>
+  </table>
+</div>

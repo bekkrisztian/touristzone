@@ -1,0 +1,71 @@
+.mat-dialog-content {
+	position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.mat-dialog-content ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mat-dialog-content ul li .a-element {
+	display: block;
+	background: #ebebeb;
+	padding: 10px 15px;
+	color: #333;
+	text-decoration: none;
+	transition: 0.2s linear;
+}
+
+.mat-dialog-content ul li .a-element:hover {
+	background: #f8f8f8;
+	color: #515151;
+}
+
+.mat-dialog-content ul ul {
+	background-color:#ebebeb;
+}
+
+.mat-dialog-content ul li ul li .a-element {
+	background: #f8f8f8;
+	border-left: 4px solid transparent;
+	padding: 10px 20px;
+}
+
+.mat-dialog-content ul li ul li .a-element:hover {
+	background: #ebebeb;
+	border-left: 4px solid #3498db;
+}
+
+.sub-menu, .less {
+  display: none;
+}
+
+.less, .more {
+  width: 100%;
+  margin: 5px 0px;
+}
+
+.element-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-element {
+  padding: 6px 0px 0 0px;
+}
+
+.element-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.country-element {
+  display: flex;
+
+  .flag-image {
+    margin: auto 10px;
+  }
+}

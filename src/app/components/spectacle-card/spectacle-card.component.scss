@@ -1,0 +1,140 @@
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  z-index: 44;
+  background: rgba(0,0,0,0.9);
+}
+
+.mat-spinner {
+  margin: 100px auto;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.filter {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.space {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.my-dialog-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-content {
+  padding: 20px;
+  min-width: 300px;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.spectacle-title {
+  height: 60px;
+  line-height: 30px;
+}
+
+.pin-image {
+  text-align: center;
+}
+
+.spectacle-card {
+  width: 300px;
+}
+
+.margin {
+  margin: 10px;
+}
+
+.card-description {
+  height: 55px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.view-button {
+  width: 100%;
+}
+
+.spectacle-detail-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mat-card-header {
+  margin-bottom: 20px;
+
+  .county-a-tag, .country-a-tag {
+    text-decoration: none;
+  }
+
+  .country-a-tag {
+    color: black;
+  }
+
+  .county-a-tag {
+    color: gray;
+  }
+}
+
+.mat-card-content {
+  margin-bottom: 0;
+}
+
+.mat-expansion-panel {
+  text-align: center;
+  a {
+    margin: 0 5px;
+  }
+}
+
+.warning {
+  width: 100%;
+  .mat-card {
+    background-color: #ffffcc;
+    color: #ffc107;
+    width: 100%;
+    margin-bottom: 100vh;
+  }
+}
+
+.page-part {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  .page-size {
+    justify-content: flex-start;
+    width: 50%;
+  }
+  .pagination {
+    justify-content: flex-end;
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 490px) {
+  .page-part {
+    display: block;
+    .page-size {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .pagination {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

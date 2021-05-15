@@ -1,0 +1,47 @@
+@import "~leaflet/dist/leaflet.css";
+#map {
+  position: relative;
+  height: 93vh;
+}
+
+@media (max-height: 1366px) {
+  #map {
+    position: relative;
+    height: 95vh;
+  }
+ }
+
+ @media (max-height: 1024px) {
+  #map {
+    position: relative;
+    height: 93vh;
+  }
+ }
+
+ @media (max-height: 850px) {
+  #map {
+    position: relative;
+    height: 93vh;
+  }
+ }
+
+@media (max-height: 776px) {
+  #map {
+    position: relative;
+    height: 92vh;
+  }
+ }
+
+ @media (max-height: 660px) {
+  #map {
+    position: relative;
+    height: 91vh;
+  }
+ }
+
+ @media (max-height: 600px) {
+  #map {
+    position: relative;
+    height: 90vh;
+  }
+ }

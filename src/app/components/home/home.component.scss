@@ -1,0 +1,158 @@
+.grid-container {
+  margin: 20px;
+  margin-bottom: 80px;
+
+  .mat-card {
+    .mat-card-subtitle {
+      text-align: center;
+    }
+  }
+}
+
+.mat-h1 {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  text-shadow: 5px 9px 5px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: #546e7a;
+
+  .card-box {
+    background-color: rgba($color: #000000, $alpha: .5);
+    text-align: center;
+    margin: 100px 0;
+
+    .mat-card-header {
+      background-color: rgba($color: #000000, $alpha: .7);
+      justify-content: center;
+      border: #000000 2px solid;
+      color: #fff;
+    }
+  }
+}
+
+.dashboard-card:hover {
+  background: linear-gradient(red, yellow, green);
+  transform: skew(5deg, 0deg);
+  transition: 1s;
+}
+
+.card-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-position: center;
+  color: #5383d3;
+  background-blend-mode: overlay;
+}
+
+.spectacles-more-title {
+  padding: 0 20px;
+  line-height: 1;
+
+  .mat-card {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+    .mat-card-title {
+      color: #5383d3;
+      text-transform: uppercase;
+    }
+}
+
+.spectacles-more-button {
+  text-align: center;
+  margin: 30px 0;
+
+  button {
+    width: 50%;
+  }
+}
+
+.spectacles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.spectacle-title {
+  height: 60px;
+  line-height: 30px;
+}
+
+.pin-image {
+  text-align: center;
+}
+
+.spectacle-card {
+  width: 300px;
+  margin: 10px;
+}
+
+.margin {
+  margin: 10px;
+}
+
+.card-description {
+  height: 55px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.view-button {
+  width: 100%;
+}
+
+.spectacle-detail-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mat-card-header {
+  margin-bottom: 20px;
+
+  .county-a-tag, .country-a-tag {
+    text-decoration: none;
+  }
+
+  .country-a-tag {
+    color: black;
+  }
+
+  .county-a-tag {
+    color: gray;
+  }
+}
+
+.mat-card-content {
+  margin-bottom: 0;
+}
+
+.mat-expansion-panel {
+  text-align: center;
+  a {
+    margin: 0 5px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .dashboard-card:hover {
+    background: none;
+    transform: none;
+    transition: none;
+  }
+}

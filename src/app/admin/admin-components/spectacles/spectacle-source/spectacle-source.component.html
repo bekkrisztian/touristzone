@@ -1,0 +1,109 @@
+<h1>{{ spectacle?.name }}</h1>
+<div class="cover">
+  <h2>Borítókép</h2>
+  <div class="image-upload">
+    <input type="file" name="image" accept="image/*" (change)="onCoverSelected($event)">
+    <button type="button" (click)="onCoverUpload()">Feltöltés</button>
+  </div>
+  <table>
+    <tr>
+      <th>Kép</th>
+      <th>Név</th>
+      <th>Törlés</th>
+    </tr>
+    <tr>
+      <td>
+        <img [src]="'data:image/JPG;base64,'+ spectacle?.covers?.data" alt="{{ spectacle?.covers?.name }}" width="200">
+      </td>
+      <td>{{ spectacle?.covers?.name }}</td>
+      <td>
+        <button mat-raised-button color="warn" (click)="deleteCover(spectacle?.covers?.id, spectacle?.covers?.name)"><mat-icon>delete</mat-icon></button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="images">
+  <h2>Képek</h2>
+  <div class="image-upload">
+    <input type="file" accept="image/*" (change)="onImageSelected($event)" multiple>
+    <button type="button" (click)="onImageUpload()">Feltöltés</button>
+  </div>
+  <table>
+    <tr>
+      <th>Kép</th>
+      <th>Név</th>
+      <th>Törlés</th>
+    </tr>
+    <tr *ngFor="let image of spectacle?.images">
+      <td>
+        <img [src]="'data:image/JPG;base64,'+ image?.data" alt="{{ image?.name }}" width="200">
+      </td>
+      <td>{{ image?.name }}</td>
+      <td>
+        <button mat-raised-button color="warn" (click)="deleteImage(image?.id, image?.name)"><mat-icon>delete</mat-icon></button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="sources">
+  <h2>Források</h2>
+  <div>
+    <form [formGroup]="sourceForm" (ngSubmit)="onSubmit()" novalidate>
+      <mat-form-field>
+        <mat-label>Forrás neve</mat-label>
+        <input matInput formControlName="name" placeholder="Forrás neve">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Forrás URL</mat-label>
+        <input matInput formControlName="source" placeholder="Forrás URL">
+      </mat-form-field>
+      <button type="submit" class="mat-raised-button" [disabled]="sourceForm.invalid">Hozzáadás</button>
+    </form>
+  </div>
+  <table>
+    <tr>
+      <th>Név</th>
+      <th>Forrás</th>
+      <th>Törlés</th>
+    </tr>
+    <tr *ngFor="let source  of spectacle?.sources">
+      <td>{{ source?.name }}</td>
+      <td><a href="{{ source?.source }}">{{ source?.source }}</a></td>
+      <td>
+        <button mat-raised-button color="warn" (click)="deleteSource(source?.id, source?.name)"><mat-icon>delete</mat-icon></button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="others">
+  <h2>Egyebek</h2>
+  <div>
+    <form [formGroup]="otherForm" (ngSubmit)="onSubmit1()" novalidate>
+      <mat-form-field>
+        <mat-label>Egyéb neve</mat-label>
+        <input matInput formControlName="name" placeholder="Egyéb neve">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Egyéb URL</mat-label>
+        <input matInput formControlName="source" placeholder="Egyéb URL">
+      </mat-form-field>
+      <button type="submit" class="mat-raised-button" [disabled]="otherForm.invalid">Hozzáadás</button>
+    </form>
+  </div>
+  <table>
+    <tr>
+      <th>Név</th>
+      <th>Forrás</th>
+      <th>Törlés</th>
+    </tr>
+    <tr *ngFor="let other  of spectacle?.others">
+      <td>{{ other?.name }}</td>
+      <td><a href="{{ other?.source }}">{{ other?.source }}</a></td>
+      <td>
+        <button mat-raised-button color="warn" (click)="deleteOther(other?.id, other?.name)"><mat-icon>delete</mat-icon></button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+

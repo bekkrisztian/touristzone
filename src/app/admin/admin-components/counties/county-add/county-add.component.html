@@ -1,0 +1,17 @@
+<form [formGroup]="countyForm" (ngSubmit)="onSubmit()" novalidate>
+  <div formGroupName="country">
+    <h3>Ország</h3>
+    <select formControlName="id">
+      <option>-- Válasszon országot --</option>
+      <option  *ngFor ="let country of countryDto" value="{{ country?.id }}">{{ country?.name }}</option>
+    </select>
+  </div>
+  <mat-form-field>
+    <mat-label>Megye neve</mat-label>
+    <input matInput formControlName="name" placeholder="Megye neve">
+  </mat-form-field>
+  <button type="submit" class="mat-raised-button" [disabled]="countyForm.invalid">Mentés</button>
+</form>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="onCloseClick()">Bezárás</button>
+</mat-dialog-actions>

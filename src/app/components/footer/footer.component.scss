@@ -1,0 +1,135 @@
+footer {
+  background-color: #292c2f;
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+  padding: 20px 50px 20px 120px;
+}
+
+.footer-left, .footer-center, .footer-right {
+  display: inline-block;
+	vertical-align: middle;
+}
+
+.footer-left {
+  width: 33%;
+  text-align: left;
+}
+
+li {
+  display: inline;
+  padding-right: 15px;
+}
+
+.footer-links {
+	color: #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-links a {
+	display: inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-touristzone-name {
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-center {
+	width: 38%;
+  text-align: center;
+  margin: 0 40px;
+}
+.footer-center h2 {
+	color: #5383d3;
+}
+
+.message-contact-form {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-right{
+	width: 19%;
+  text-align: right;
+}
+
+.footer-touristzone-about {
+  line-height: 20px;
+	color: #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-touristzone-about span {
+  display: block;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-touristzone-about {
+  margin-bottom: 150px;
+}
+
+.footer-icons {
+	margin-top: 25px;
+}
+
+.footer-left .mat-icon {
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-left a {
+  line-height: 1.8;
+	text-decoration: none;
+	color: #fff;
+}
+
+input, textarea{
+  color: #fff;
+  line-height: 1;
+}
+
+@media (max-width: 1300px) {
+  footer  {
+    padding: 0px 30px;
+  }
+
+  .footer-center {
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+  }
+
+  .footer-icons div {
+    padding-right: 30px;
+  }
+
+  .footer-touristzone-about {
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,39 @@
+<mat-dialog-content>
+  <ul *ngFor="let country of countryDto | orderBy:'name'">
+    <li class="menu{{ country?.id }}">
+      <button mat-raised-button color="primary" class="more" (click)="showSubMenus(country?.id)" id="more{{ country?.id }}">
+        <div class="element-container">
+          <div class="country-element">
+            <div class="flag-image">
+              <img [src]="'data:image/JPG;base64,'+ country?.flag?.data" width="16">
+            </div>
+            <div class="country-name">
+              <a href="country/{{ country?.id }}">{{ country?.name }}</a>
+            </div>
+          </div>
+          <div class="arrow-element">
+            <mat-icon>arrow_drop_up</mat-icon>
+          </div>
+        </div>
+      </button>
+      <button mat-raised-button color="primary" class="less" id="less{{ country?.id }}" (click)="hideSubMenus(country?.id)">
+        <div class="element-container">
+          <div class="country-element">
+            <div class="flag-image">
+              <img [src]="'data:image/JPG;base64,'+ country?.flag?.data" width="16">
+            </div>
+            <div class="country-name">
+              <a href="country/{{ country?.id }}">{{ country?.name }}</a>
+            </div>
+          </div>
+          <div class="arrow-element">
+            <mat-icon>arrow_drop_down</mat-icon>
+          </div>
+        </div>
+      </button>
+      <ul *ngFor="let county of country?.counties | orderBy:'name'">
+        <li class="sub-menu" id="sub-menu{{ country?.id }}"><a class="a-element" href="county/{{ county?.id }}">{{ county?.name }}</a></li>
+      </ul>
+    </li>
+  </ul>
+</mat-dialog-content>

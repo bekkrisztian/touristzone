@@ -1,0 +1,40 @@
+<footer>
+  <div class="footer-left">
+    <a href="/home"><img src="/assets/img/logo/logo.png" width="90" height="90"></a>
+    <ul class="footer-links">
+      <li><a href="/home">Főoldal</a></li>
+      <li><a href="/spectacles">Látványosságok</a></li>
+      <li><a href="/maps">Térkép</a></li>
+      <li><a href="/aboutus">Rólunk</a></li>
+    </ul>
+    <div class="footer-icons">
+      <div><a href="#"><mat-icon>facebook</mat-icon>Facebook</a></div>
+      <div><a href="#"><mat-icon>tag</mat-icon>Instagram</a></div>
+    </div>
+  </div>
+  <div class="footer-center">
+    <h2>Kíváncsian várjuk véleményét!</h2>
+      <form class="contact-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div class="email-contact-form" [formGroup]="formGroup">
+          <mat-form-field>
+            <input matInput formControlName="email" placeholder="E-mail címe" [formControl]="emailField" required>
+            <mat-error *ngIf="emailField.invalid">{{ getErrorMessage(emailField) }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="message-contact-form">
+          <mat-form-field class="half-width">
+            <textarea matInput formControlName="opinion" placeholder="Az Ön véleménye" maxlength="250" required></textarea>
+            <mat-error *ngIf="feedbackField.invalid">{{ getErrorMessage(feedbackField) }}</mat-error>
+          </mat-form-field>
+        </div>
+        <button color="primary" mat-raised-button type="submit" [disabled]="formGroup.invalid">Küldés</button>
+      </form>
+  </div>
+  <div class="footer-right">
+    <p class="footer-touristzone-about">
+      <span>Röviden a TouristZone-ról</span>
+      Turista látványosságokról adunk információt minden kirándulni vágyó kalandornak.
+    </p>
+    <p class="footer-touristzone-name">TouristZone &copy; 2021</p>
+  </div>
+</footer>

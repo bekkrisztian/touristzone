@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.mat-form-field {
+  line-height: 2;
+}
+
+h3 {
+  margin: 20px 0 5px 0;
+  font-weight: bold;
+  color: #448aff;
+  text-transform: uppercase;
+}
+
+select {
+  width: 215px;
+  height: 30px;
+  border: 1px solid #999;
+  font-size: 18px;
+  color: #1c87c9;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 4px 4px #ccc;
+  margin: 5px 0;
+}
+
+.spectacle-id {
+  display: none;
+}

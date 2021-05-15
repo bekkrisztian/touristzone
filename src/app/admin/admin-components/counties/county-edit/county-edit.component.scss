@@ -1,0 +1,35 @@
+.county-id {
+  display: none;
+}
+
+form {
+  margin: 100px 30px 30px 30px;
+  text-align: center;
+}
+
+.mat-form-field {
+  line-height: 2;
+}
+
+.county-name {
+  display: block;
+}
+
+h3 {
+  margin: 20px 0 5px 0;
+  font-weight: bold;
+  color: #448aff;
+  text-transform: uppercase;
+}
+
+select {
+  width: 215px;
+  height: 30px;
+  border: 1px solid #999;
+  font-size: 18px;
+  color: #1c87c9;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 4px 4px #ccc;
+  margin: 5px 0;
+}

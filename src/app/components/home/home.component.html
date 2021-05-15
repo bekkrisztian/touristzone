@@ -1,0 +1,85 @@
+<app-carousel></app-carousel>
+<div class="grid-container">
+  <mat-card>
+    <mat-card-title class="mat-h1">#touristzone</mat-card-title>
+    <mat-card-subtitle>Üdvözöljük Önt a weboldalunkon! Tisztelt látogató, ha többet szeretne megtudni a Világban található turisztikai attrakciókról, akkor jó helyen jár. Célunk, hogy országonként bemutassuk azokat a fő látnivlókat, amelyeket nem hagyhat ki, ha kirándulást tervez és ezen belül információt szeretnénk nyújtani az attrakció leírásával, történelmi hátterével, és egyéb hasznos kiegészítő információkkal (pl. jegyár, nyitvatartás).</mat-card-subtitle>
+    <mat-card-subtitle>Amennyiben felkeltettük figyelmét, akkor kövesse naprakész információinkat!</mat-card-subtitle>
+    <mat-card-subtitle>Tervezzen, utazzon és navigáljon velünk!</mat-card-subtitle>
+  </mat-card>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <a href="{{ card.url }}" title="{{ card.title }}">
+          <mat-card class="dashboard-card card-image" [style.background-image]="'url(/assets/img/home/' + card.imageName + ')'">
+            <div class="card-box">
+              <mat-card-header>
+                <mat-card-title class="card-title">{{ card.title }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ card.content }}</p>
+              </mat-card-content>
+            </div>
+          </mat-card>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div class="spectacles-more">
+  <div class="spectacles-more-title">
+    <mat-card>
+      <mat-card-title>Tudjon meg többet jövőbeli kirándulásainak célpontjairól</mat-card-title>
+    </mat-card>
+  </div>
+  <div class="spectacles">
+    <div *ngFor="let spectacle of spectacles | slice:0:3;" class="card">
+      <div class="margin">
+        <mat-card class="spectacle-card">
+          <mat-card-header>
+            <img mat-card-avatar [src]="'data:image/JPG;base64,'+ spectacle?.county?.country?.flags?.data" alt="flag">
+            <mat-card-title><a class="country-a-tag" href="/country/{{ spectacle?.county?.country?.id }}">{{ spectacle?.county?.country?.name }}</a></mat-card-title>
+            <mat-card-subtitle><a class="county-a-tag" href="/county/{{ spectacle?.county?.id }}">{{ spectacle?.county?.name }}</a></mat-card-subtitle>
+          </mat-card-header>
+          <a class="spectacle-detail-link" href="/spectacles/{{ spectacle?.id }}" title="{{ spectacle?.name }}">
+            <img mat-card-image [src]="'data:image/JPG;base64,'+ spectacle?.covers?.data" alt="cover" height="200">
+            <mat-card-content>
+              <mat-card-title class="spectacle-title">{{ spectacle?.name }}</mat-card-title>
+              <div class="pin-image">
+                <img [src]="spectacle?.pin?.image" width="25px" style="margin-left: 10px;" alt="{{ spectacle?.pin?.name }}" title="{{ spectacle?.pin?.name }}">
+              </div>
+              <hr>
+              <p class="card-description">Tekintse meg a {{ spectacle?.name }} nevű látványosságot és tudjon meg róla többet...</p>
+              <br>
+            </mat-card-content>
+          </a>
+          <mat-card-content>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>share</mat-icon>
+                </mat-panel-title>
+                <mat-panel-description>
+                  Ossza meg ismerőseivel
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4200/spectacles/{{ spectacle?.id }}">
+                <img src="/assets/img/social-icons/facebook.png" alt="facebook">
+              </a>
+              <a href="https://twitter.com/intent/tweet?text=TouristZone&url=http://localhost:4200/spectacles/{{ spectacle?.id }}">
+                <img src="/assets/img/social-icons/twitter.png" alt="twitter">
+              </a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:4200/spectacles/{{ spectacle?.id }}">
+                <img src="/assets/img/social-icons/linkedin.png" alt="linkedin">
+              </a>
+              <input disabled value="http://localhost:4200/spectacles/{{ spectacle?.id }}"/>
+            </mat-expansion-panel>
+          </mat-card-content>
+          <mat-card-actions>
+            <a href="/spectacles/{{ spectacle?.id }}"><button class="view-button" mat-raised-button color="primary">Megtekintés</button></a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      </div>
+    </div>
+    <div class="spectacles-more-button">
+      <a href="http://localhost:4200/spectacles"><button mat-raised-button color="accent">Bővebben...</button></a>
+    </div>
+  </div>

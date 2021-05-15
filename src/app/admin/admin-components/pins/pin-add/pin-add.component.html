@@ -1,0 +1,16 @@
+<form [formGroup]="pinForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <mat-form-field>
+      <mat-label>Kategória</mat-label>
+      <input matInput formControlName="name" placeholder="Kategória">
+    </mat-form-field>
+  </div>
+  <mat-form-field>
+    <mat-label>Pin url</mat-label>
+    <input matInput formControlName="image" placeholder="Pin url">
+  </mat-form-field>
+  <button type="submit" class="mat-raised-button" [disabled]="pinForm.invalid">Mentés</button>
+</form>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="onCloseClick()">Bezárás</button>
+</mat-dialog-actions>

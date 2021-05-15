@@ -1,0 +1,21 @@
+.mat-card {
+  position: absolute;
+  width: 400px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .mat-card-header, form, .mat-card-actions {
+    display: flex;
+    justify-content: center;
+  }
+  .mat-card-header {
+    img {
+      padding-right: 25px;
+    }
+  }
+  .mat-card-actions {
+    button {
+      width: 100%;
+    }
+  }
+}

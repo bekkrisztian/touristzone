@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mat-form-field {
+  line-height: 2;
+}
+
+h3 {
+  margin: 20px 0 5px 0;
+  font-weight: bold;
+  color: #448aff;
+  text-transform: uppercase;
+}

@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+  fixedInViewport="false"
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'"
+  [opened]="(isHandset$ | async) === false">
+    <mat-toolbar color="accent">Menü</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/home"><mat-icon>home</mat-icon>Főoldal</a>
+      <a mat-list-item href="/spectacles"><mat-icon>language</mat-icon>Látványosságok</a>
+      <a mat-list-item href="/maps"><mat-icon>explore</mat-icon>Térkép</a>
+      <a mat-list-item href="/aboutus"><mat-icon>label</mat-icon>Rólunk</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"><mat-icon aria-label="Side nave toggle icon">menu</mat-icon>
+      </button>
+      <a href="/home"><img src="../assets/img/logo/logo.png" alt="logo" width="100"></a>
+      <div class="spacer"></div>
+      <app-search></app-search>
+    </mat-toolbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>
+<app-arrow-top></app-arrow-top>

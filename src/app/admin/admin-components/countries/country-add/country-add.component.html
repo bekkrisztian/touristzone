@@ -1,0 +1,10 @@
+<form [formGroup]="countryForm" (ngSubmit)="onSubmit()" novalidate>
+  <mat-form-field>
+    <mat-label>Ország neve</mat-label>
+    <input matInput formControlName="name" placeholder="Ország neve">
+  </mat-form-field>
+  <button type="submit" class="mat-raised-button" [disabled]="countryForm.invalid">Mentés</button>
+</form>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="onCloseClick()">Bezárás</button>
+</mat-dialog-actions>

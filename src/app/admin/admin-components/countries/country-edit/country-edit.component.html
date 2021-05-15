@@ -1,0 +1,11 @@
+<form [formGroup]="countryForm" (ngSubmit)="onSubmit()" novalidate>
+  <mat-form-field class="country-id">
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="id" placeholder="ID">
+  </mat-form-field>
+  <mat-form-field class="country-name">
+    <mat-label>Ország neve</mat-label>
+    <input matInput formControlName="name" placeholder="Ország neve">
+  </mat-form-field>
+  <button type="submit" class="mat-raised-button" [disabled]="countryForm.invalid">Mentés</button>
+</form>
