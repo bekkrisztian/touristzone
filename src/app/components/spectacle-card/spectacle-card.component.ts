@@ -38,11 +38,8 @@ export class SpectacleCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
-
     this.activatedRoute.paramMap.subscribe(() => {
       this.listSpectacles();
-
     });
   }
 

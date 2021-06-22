@@ -194,7 +194,7 @@ export class SpectacleService {
   }
 
   // Create Sources
-  createSources(sources: Sources, spectacleId: string) {
+  createSources(sources: Sources, spectacleId: string): Observable<Sources> {
     const API_URL = `http://localhost:8080/api/v1/source/save/${spectacleId}`;
     return this.http.post<Sources>(API_URL, sources).pipe(
       catchError(this.handleError)
@@ -210,7 +210,7 @@ export class SpectacleService {
   }
 
   // Create Others
-  createOthers(other: Others, spectacleId: string) {
+  createOthers(other: Others, spectacleId: string): Observable<Others> {
     const API_URL = `http://localhost:8080/api/v1/other/save/${spectacleId}`;
     return this.http.post<Sources>(API_URL, other).pipe(
       catchError(this.handleError)

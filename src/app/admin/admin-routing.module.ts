@@ -29,7 +29,6 @@ const routes: Routes = [
     {path: 'opinions', component: OpinionsComponent, data: {title: 'TouristZone | Vélemények'}},
     {path: 'pins', component: PinListComponent, data: {title: 'TouristZone | Pinek'}}
   ]},
-
 ];
 
 @NgModule({

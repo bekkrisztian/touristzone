@@ -37,11 +37,6 @@ export class SpectacleDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-  ontouchmove(e){
-
-  }
-
-  // spectacle on map
   getSpectacleInfo() {
     const id: string = this.activatedRoute.snapshot.paramMap.get('id');
 

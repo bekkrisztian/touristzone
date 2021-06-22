@@ -8,7 +8,7 @@
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Username" formControlName="username" [errorStateMatcher]="matcher" required>
+              <input matInput placeholder="Felhasználónév" formControlName="username" [errorStateMatcher]="matcher" required>
               <mat-error>
                 <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">Adja meg felhasználónevét</span>
               </mat-error>
@@ -18,7 +18,7 @@
         <tr>
           <td>
             <mat-form-field>
-              <input type="password" matInput placeholder="Password" formControlName="password" [errorStateMatcher]="matcher" required>
+              <input type="password" matInput placeholder="Jelszó" formControlName="password" [errorStateMatcher]="matcher" required>
               <mat-error>
                 <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Adja meg jelszavát</span>
               </mat-error>
@@ -26,7 +26,7 @@
           </td>
         </tr>
         <mat-card-actions>
-          <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary">Login</button>
+          <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary">Bejelentkezés</button>
         </mat-card-actions>
       </table>
     </form>

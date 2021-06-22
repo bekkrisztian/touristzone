@@ -6,10 +6,20 @@
   [opened]="(isHandset$ | async) === false">
     <mat-toolbar color="accent">Menü</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/home"><mat-icon>home</mat-icon>Főoldal</a>
-      <a mat-list-item href="/spectacles"><mat-icon>language</mat-icon>Látványosságok</a>
-      <a mat-list-item href="/maps"><mat-icon>explore</mat-icon>Térkép</a>
-      <a mat-list-item href="/aboutus"><mat-icon>label</mat-icon>Rólunk</a>
+      <ul>
+        <li>
+          <a mat-list-item routerLink="/home" routerLinkActive="active"><mat-icon>home</mat-icon>Főoldal</a>
+        </li>
+        <li>
+          <a mat-list-item routerLink="/spectacles"><mat-icon>language</mat-icon>Látványosságok</a>
+        </li>
+        <li>
+          <a mat-list-item routerLink="/maps"><mat-icon>explore</mat-icon>Térkép</a>
+        </li>
+        <li>
+          <a mat-list-item routerLink="/aboutus"><mat-icon>label</mat-icon>Rólunk</a>
+        </li>
+    </ul>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -18,7 +28,7 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"><mat-icon aria-label="Side nave toggle icon">menu</mat-icon>
+        *ngIf="isHandset$ | async"><mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <a href="/home"><img src="../assets/img/logo/logo.png" alt="logo" width="100"></a>
       <div class="spacer"></div>

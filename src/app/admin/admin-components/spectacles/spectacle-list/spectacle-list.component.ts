@@ -50,7 +50,7 @@ export class SpectacleListComponent implements OnInit {
     this.spectacleService.deleteSpectacle(id).subscribe(() => {
         this.getSpectacles(),
         (error: any) => console.log(error)
-    });
+      });
     }
   }
 

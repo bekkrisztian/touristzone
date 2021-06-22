@@ -127,6 +127,13 @@ swiper {
   display: block;
 }
 
+.launch {
+  position: absolute;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
 @media (max-width: 800px) {
   .spectacle-container {
     margin: 0px 0px;

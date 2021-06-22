@@ -43,13 +43,13 @@
     <h2>Egyebek</h2>
     <div class="spectacle-others" *ngFor="let others of spectacle?.others">
       <div class="spectacle-other">
-        <a [attr.href]="others?.source">{{ others?.name }}</a>
+        <a [attr.href]="others?.source">{{ others?.name }} <mat-icon class="launch">launch</mat-icon></a>
       </div>
     </div>
     <div class="spectacle-sources">
       <h2>Források</h2>
       <div class="spectacle-source" *ngFor="let sources of spectacle?.sources">
-        <a [attr.href]="sources?.source">{{ sources?.name }}</a>
+        <a [attr.href]="sources?.source">{{ sources?.name }} <mat-icon class="launch">launch</mat-icon></a>
       </div>
     </div>
   </section>
